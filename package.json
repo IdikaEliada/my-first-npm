@@ -20,6 +20,7 @@
   "homepage": "https://github.com/IdikaEliada/my-first-npm#readme",
   "devDependencies": {
     "@types/node": "^25.3.2",
+    "tsup": "^8.5.1",
     "typescript": "^5.9.3"
   }
 }
