@@ -1,20 +1,40 @@
 {
   "name": "@idikaeliada/my-first-npm",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "My first npm package – simple utilities to get started with publishing",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "type": "module",
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
   "scripts": {
-    "test": "vitestnpm test",
-    "build": "tsup src/index.ts --format esm,cjs"
+    "build": "tsup src/index.ts --format esm,cjs --dts --clean --sourcemap",
+    "test": "vitest",
+    "prepublishOnly": "npm run build && npm test"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/IdikaEliada/my-first-npm.git"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "type": "module",
+  "keywords": [
+    "first-package",
+    "learning",
+    "npm",
+    "typescript"
+  ],
+  "author": "Idika Eliada <your-email@example.com>[](https://github.com/IdikaEliada)",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/IdikaEliada/my-first-npm/issues"
   },
