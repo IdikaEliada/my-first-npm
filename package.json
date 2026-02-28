@@ -20,7 +20,7 @@
   ],
   "scripts": {
     "build": "tsup src/index.ts --format esm,cjs --dts --clean --sourcemap",
-    "test": "vitest",
+    "test": "vitest --run",
     "prepublishOnly": "npm run build && npm test"
   },
   "repository": {
